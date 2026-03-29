@@ -190,8 +190,8 @@ app.use('*', async (c, next) => {
     return next();
   }
 
-  // Skip validation in dev mode
-  if (c.env.DEV_MODE === 'true') {
+  // Skip validation in dev/test mode
+  if (c.env.DEV_MODE === 'true' || c.env.E2E_TEST_MODE === 'true') {
     return next();
   }
 
